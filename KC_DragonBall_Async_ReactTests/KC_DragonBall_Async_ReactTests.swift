@@ -5,6 +5,9 @@
 //  Created by Juan Carlos Rubio Casas on 30/11/24.
 //
 
+// NOTA IMPORTANTE: Los test esta en español
+// Si algun tecto falla, seguramente es por estar ejecutandose en ingles
+
 import XCTest
 import Combine
 import CombineCocoa
@@ -14,26 +17,18 @@ import UIKit
  final class KC_DragonBall_Async_ReactTests: XCTestCase {
  
  override func setUpWithError() throws {
- // Put setup code here. This method is called before the invocation of each test method in the class.
- }
+  }
  
  override func tearDownWithError() throws {
- // Put teardown code here. This method is called after the invocation of each test method in the class.
  }
  
  func testExample() throws {
- // This is an example of a functional test case.
- // Use XCTAssert and related functions to verify your tests produce the correct results.
- // Any test you write for XCTest can be annotated as throws and async.
- // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
- // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
  }
  
  func testPerformanceExample() throws {
- // This is an example of a performance test case.
- measure {
- // Put the code you want to measure the time of here.
- }
+     measure {
+ 
+     }
  }
  
  func testKeyChainLibrary() throws {
@@ -128,16 +123,7 @@ import UIKit
  self.waitForExpectations(timeout: 10)
  }
  
- func testUIErrorView() async throws  {
  
- let appStateVM = AppState(loginUseCase: LoginUseCaseFake())
- XCTAssertNotNil(appStateVM)
- 
- appStateVM.statusLogin = .error
- 
- let vc = await ErrorViewController(appState: appStateVM, error: "Error Testing")
- XCTAssertNotNil(vc)
- }
  
  // LoginView
  func testUILoginView()  throws  {
@@ -158,9 +144,9 @@ import UIKit
  let error = view.getErrorLabel()
  XCTAssertNotNil(error)
  
- XCTAssertEqual(txtEmail.placeholder, "Email")
- XCTAssertEqual(txtPass.placeholder, "Password")
- XCTAssertEqual(button.titleLabel?.text, "Login")
+ XCTAssertEqual(txtEmail.placeholder, "Correo electrónico")
+ XCTAssertEqual(txtPass.placeholder, "Clave")
+ XCTAssertEqual(button.titleLabel?.text, "Entrar")
  
  //la vista esta generada
  let View2 =  LoginViewController(appState: AppState(loginUseCase: LoginUseCaseFake()))
@@ -178,10 +164,7 @@ import UIKit
  //el boton debe estar desactivado
  XCTAssertEqual(View2.emailTextfield?.text, "Hola")
  }
- 
- 
- 
- // ErrorView
+  // ErrorView
  func testUIErrorView() {
  // Inicializamos la vista
  let errorView = ErrorView()
@@ -193,7 +176,7 @@ import UIKit
  XCTAssertNotNil(errorView.backButton)
  
  // Verificamos configuraciones iniciales
- XCTAssertEqual(errorView.backButton.title(for: .normal), "Back") // Botón debe decir "Back"
+ XCTAssertEqual(errorView.backButton.title(for: .normal), "Volver") // Botón debe decir "Back"
  XCTAssertEqual(errorView.errorLabel.textColor, .red) // Color de texto de error
  XCTAssertTrue(errorView.errorLabel.text?.isEmpty ?? true) // Por defecto, no debe tener texto
  

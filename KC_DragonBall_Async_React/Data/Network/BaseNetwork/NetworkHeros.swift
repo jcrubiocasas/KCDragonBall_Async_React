@@ -84,4 +84,37 @@ func getHerosFromJson() -> [HerosModel] {
     return [] // Retorna un array vacío si ocurre un error.
 }
 
-///
+/// Implementación simulada del protocolo `NetworkHerosProtocol` para obtener héroes hardcodeados.
+final class NetworkHerosFake: NetworkHerosProtocol {
+
+    // MARK: - Methods
+
+    /// Obtiene héroes hardcodeados.
+    ///
+    /// - Parameter filter: Nombre o parte del nombre para filtrar los héroes (no utilizado en esta implementación).
+    /// - Returns: Un array de objetos `HerosModel`.
+    func getHeros(filter: String) async -> [HerosModel] {
+        return getHerosHardcoded() // Llama al método para obtener héroes hardcodeados.
+    }
+}
+
+/// Proporciona héroes hardcodeados para pruebas.
+func getHerosHardcoded() -> [HerosModel] {
+    let model1 = HerosModel(
+        id: UUID(),
+        favorite: true,
+        description: "Sobran las presentaciones cuando se habla de Goku...",
+        photo: "https://cdn.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300",
+        name: "Goku"
+    )
+
+    let model2 = HerosModel(
+        id: UUID(),
+        favorite: true,
+        description: "Vegeta es todo lo contrario. Es arrogante...",
+        photo: "https://cdn.alfabetajuega.com/alfabetajuega/2020/12/vegetita.jpg?width=300",
+        name: "Vegeta"
+    )
+
+    return [model1, model2] // Retorna un array con los héroes hardcodeados.
+}

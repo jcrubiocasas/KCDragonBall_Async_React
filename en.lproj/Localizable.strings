@@ -1,0 +1,12 @@
+/*
+  KC_DragonBall_Async_React
+  Localizable.strings
+  Created by Juan Carlos Rubio Casas on 1/12/24.
+*/
+
+"Email" = "E-mail"; // Define la traducción para el texto 'Email'.
+"Password" = "Password"; // Define la traducción para el texto 'Password'.
+"Login" = "Login"; // Define la traducción para el texto 'Login'.
+"Back" = "Back"; // Define la traducción para el texto 'Back'.
+"Lista de Heroes" = "Heroes list"; // Define la traducción para el texto 'Lista de Heroes'.
+"TRANSFORMATIONS" = "TRANSFORMATIONS"; // Define la traducción para el texto 'TRANSFORMATIONS'.
